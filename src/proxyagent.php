@@ -58,34 +58,44 @@ class ProxyAgent
             );
         }
 
-        if( isset( $this->config['headers'] ) )
-        {
-            $this->matchHeader();
-        }
-
-        if( isset( $this->config['ranges'] ) )
-        {
-            $this->matchRange();
-        }
-
-        if( isset( $this->config['hosts'] ) )
-        {
-            $this->matchHost();
-        }
+        $this->matchHeader();
+        $this->matchRange();
+        $this->matchHost();
     }
 
+    /**
+     * Policy match - Proxy Headers
+     */
     private function matchHeader()
     {
+        if( ! isset( $this->config['headers'] ) ) {
+            return;
+        }
+
+
 
     }
 
+    /**
+     * Policy Match - Proxy IP Ranges
+     */
     private function matchRange()
     {
+        if( ! isset( $this->config['ranges'] ) ) {
+            return;
+        }
 
     }
 
+    /**
+     * Policy Match - Proxy Hosts
+     */
     private function matchHost()
     {
+        if( ! isset( $this->config['hosts'] ) ) {
+            return;
+        }
+
 
     }
 }
